@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Fit Timer</string>
+    <string name="menuDescription">A 3 line menu icon, pressing it opens a right side menu with settings.</string>
+    <string name="calendarDescription">A calendar icon, pressing it opens a calendar.</string>
+    <string name="workouttitle">Pull A</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
