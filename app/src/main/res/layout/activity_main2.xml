@@ -1,4 +1,4 @@
- <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -25,13 +25,6 @@
             android:focusable="true"
             android:foreground="@drawable/rippleeffect">
 
-            <ImageView
-                android:visibility="invisible"
-                android:id="@+id/imageView3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:contentDescription="@string/menuDescription"
-                app:srcCompat="@drawable/menumdpi" />
         </RelativeLayout>
 
         <EditText
@@ -41,6 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:textColorHint="@color/transparent_white"
             android:hint="Workout"
             android:textColor="@color/white"
             android:textSize="28sp" />
@@ -62,7 +56,7 @@
     <ScrollView
         android:id="@+id/scroll_list"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/relativeTitle">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -71,585 +65,182 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/collapseButton1"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_margin="8dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="@drawable/rippleeffect"
-                app:layout_constraintBottom_toTopOf="@+id/fragmentBtn2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/fragmentBtn1"
-                app:layout_constraintTop_toTopOf="@+id/fragmentBtn1"
-                app:srcCompat="@drawable/minusmdpi" />
-
-            <ImageView
-                android:id="@+id/collapseButton2"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_margin="8dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="@drawable/rippleeffect"
-                app:layout_constraintBottom_toBottomOf="@+id/fragmentBtn2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/fragmentBtn2"
-                app:layout_constraintTop_toBottomOf="@+id/fragmentBtn1"
-                app:srcCompat="@drawable/minusmdpi" />
-
-            <ImageView
-                android:id="@+id/collapseButton3"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_margin="8dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="@drawable/rippleeffect"
-                app:layout_constraintBottom_toBottomOf="@+id/fragmentBtn3"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/fragmentBtn3"
-                app:layout_constraintTop_toBottomOf="@+id/fragmentBtn2"
-                app:srcCompat="@drawable/minusmdpi" />
-
-            <ImageView
-                android:id="@+id/collapseButton4"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_margin="8dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="@drawable/rippleeffect"
-                app:layout_constraintBottom_toBottomOf="@+id/fragmentBtn4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/fragmentBtn4"
-                app:layout_constraintTop_toBottomOf="@+id/fragmentBtn3"
-                app:srcCompat="@drawable/minusmdpi" />
-
-            <ImageView
-                android:id="@+id/collapseButton5"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_margin="8dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="@drawable/rippleeffect"
-                app:layout_constraintBottom_toBottomOf="@+id/fragmentBtn5"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/fragmentBtn5"
-                app:layout_constraintTop_toBottomOf="@+id/fragmentBtn4"
-                app:srcCompat="@drawable/minusmdpi" />
-
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/fragmentBtn1"
-                android:layout_width="300dp"
+                android:id="@+id/first_workout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="@drawable/rippleeffect"
                 android:visibility="visible"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="0dp">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <EditText
+                    android:layout_marginLeft="8dp"
                     android:id="@+id/etWorkout1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@null"
-                    android:hint="Enter Exercise"
+                    android:hint="Exercise"
                     android:textColor="@color/white"
+                    android:textColorHint="@color/transparent_white"
                     android:textSize="26sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <RelativeLayout
-                    android:id="@id/relativeLayout2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="@+id/etWorkout1"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etWorkout1">
-
-                    <CheckBox
-                        android:id="@+id/checkBox"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_alignParentLeft="true"
-                        android:text="CheckBox" />
-
-                    <CheckBox
-                        android:id="@+id/checkBox2"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_toEndOf="@id/checkBox"
-                        android:text="CheckBox" />
-
-                    <CheckBox
-                        android:id="@+id/checkBox3"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_toEndOf="@id/checkBox2"
-                        android:text="CheckBox" />
-
-                    <CheckBox
-                        android:id="@+id/checkBox4"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_toEndOf="@id/checkBox3"
-                        android:text="CheckBox" />
-
-                    <CheckBox
-                        android:id="@+id/checkBox5"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_toEndOf="@id/checkBox4"
-                        android:text="CheckBox" />
-                </RelativeLayout>
-
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/rLE1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/relativeLayout2">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/etWorkout1">
+
+                    <CheckBox
+                        android:id="@+id/cB1E1"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:scaleX="1.2"
+                        android:scaleY="1.2"
+                        app:layout_constraintBottom_toBottomOf="@+id/editText"
+                        app:layout_constraintEnd_toStartOf="@+id/editText"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/editText" />
 
                     <EditText
-                        android:id="@+id/etNotes1"
-                        android:layout_width="match_parent"
+                        android:inputType="textMultiLine"
+                        android:id="@+id/editText"
+                        android:layout_width="300dp"
                         android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:background="@color/transparent"
+                        android:hint="Set"
                         android:textColor="@color/white"
-                        android:gravity="top|left"
-                        android:inputType="textMultiLine" />
-
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="vertical"-->
-<!--                    app:layout_constraintTop_toBottomOf="@id/relativeLayout2"-->
-<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent">-->
-
-<!--                    <TextView-->
-<!--                        android:id="@+id/textview"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        tools:text="Here will be our text"-->
-<!--                        android:layout_gravity="center_horizontal"-->
-<!--                        android:textSize="30sp"></TextView>-->
-
-<!--                    <EditText-->
-<!--                        android:id="@+id/edittext"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"></EditText>-->
-
-<!--                    <Button-->
-<!--                        android:id="@+id/apply_text_button"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="apply text"-->
-<!--                        android:layout_gravity="center_horizontal"></Button>-->
-
-<!--                    <Switch-->
-<!--                        android:id="@+id/switch1"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_gravity="center_horizontal"></Switch>-->
-
-<!--                    <Button-->
-<!--                        android:id="@+id/save_button"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="save data"-->
-<!--                        android:layout_gravity="center_horizontal"></Button>-->
-
-<!--                </LinearLayout>-->
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/fragmentBtn2"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
-                app:layout_constraintTop_toBottomOf="@id/fragmentBtn1"
-                android:foreground="@drawable/rippleeffect">
-
-                <EditText
-                    android:id="@+id/etWorkout2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:hint="Enter Exercise"
-                    android:textColor="@color/white"
-                    android:textSize="26sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <RelativeLayout
-                    android:id="@id/relativeLayout2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etWorkout2">
+                        android:textColorHint="@color/transparent_white"
+                        android:textSize="26sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <CheckBox
-                        android:id="@+id/checkBox"
+                        android:id="@+id/cB2E1"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
-                        android:layout_alignParentLeft="true"
-                        android:text="CheckBox" />
-
-                    <CheckBox
-                        android:id="@+id/checkBox2"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_toEndOf="@id/checkBox"
-                        android:text="CheckBox" />
-
-                    <CheckBox
-                        android:id="@+id/checkBox3"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_toEndOf="@id/checkBox2"
-                        android:text="CheckBox" />
-
-                    <CheckBox
-                        android:id="@+id/checkBox4"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_toEndOf="@id/checkBox3"
-                        android:text="CheckBox" />
-
-                    <CheckBox
-                        android:id="@+id/checkBox5"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_toEndOf="@id/checkBox4"
-                        android:text="CheckBox" />
-                </RelativeLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/relativeLayout2">
+                        android:scaleX="1.2"
+                        android:scaleY="1.2"
+                        app:layout_constraintBottom_toBottomOf="@+id/editText3"
+                        app:layout_constraintEnd_toStartOf="@+id/editText3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/editText3" />
 
                     <EditText
-                        android:id="@+id/etNotes2"
-                        android:layout_width="match_parent"
+                        android:id="@+id/editText3"
+                        android:layout_width="300dp"
+                        android:inputType="textMultiLine"
                         android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:background="@color/transparent"
+                        android:hint="Set"
                         android:textColor="@color/white"
-                        android:ems="10"
-                        android:gravity="start|top"
-                        android:inputType="textMultiLine" />
+                        android:textColorHint="@color/transparent_white"
+                        android:textSize="26sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
+                    <CheckBox
+                        android:id="@+id/cB3E1"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:scaleX="1.2"
+                        android:scaleY="1.2"
+                        app:layout_constraintBottom_toBottomOf="@+id/editText4"
+                        app:layout_constraintEnd_toStartOf="@+id/editText4"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/editText4" />
+
+                    <EditText
+                        android:id="@+id/editText4"
+                        android:layout_width="300dp"
+                        android:inputType="textMultiLine"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:background="@color/transparent"
+                        android:hint="Set"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/transparent_white"
+                        android:textSize="26sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+
+                    <CheckBox
+                        android:id="@+id/cB4E1"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:scaleX="1.2"
+                        android:scaleY="1.2"
+                        app:layout_constraintBottom_toBottomOf="@+id/editText5"
+                        app:layout_constraintEnd_toStartOf="@+id/editText5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/editText5" />
+
+                    <EditText
+                        android:id="@+id/editText5"
+                        android:layout_width="300dp"
+                        android:inputType="textMultiLine"
+                        android:padding="8dp"
+                        android:background="@color/transparent"
+                        android:layout_height="wrap_content"
+                        android:hint="Set"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/transparent_white"
+                        android:textSize="26sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+
+                    <CheckBox
+                        android:id="@+id/cB5E1"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:scaleX="1.2"
+                        android:scaleY="1.2"
+                        app:layout_constraintBottom_toBottomOf="@+id/editText6"
+                        app:layout_constraintEnd_toStartOf="@+id/editText6"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/editText6" />
+
+                    <EditText
+                        android:id="@+id/editText6"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:padding="8dp"
+                        android:background="@color/transparent"
+                        android:hint="Set"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/transparent_white"
+                        android:textSize="26sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/editText5" />" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/fragmentBtn3"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
-                app:layout_constraintTop_toBottomOf="@id/fragmentBtn2"
-
-                android:foreground="@drawable/rippleeffect">
-
-                <EditText
-                    android:id="@+id/etWorkout3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:hint="Enter Exercise"
-                    android:textColor="@color/white"
-                    android:textSize="26sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <RelativeLayout
-                    android:id="@id/relativeLayout2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etWorkout3">
-
-                    <CheckBox
-                        android:id="@+id/checkBox"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_alignParentLeft="true"
-                        android:text="CheckBox" />
-
-                    <CheckBox
-                        android:id="@+id/checkBox2"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_toEndOf="@id/checkBox"
-                        android:text="CheckBox" />
-
-                    <CheckBox
-                        android:id="@+id/checkBox3"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_toEndOf="@id/checkBox2"
-                        android:text="CheckBox" />
-
-                    <CheckBox
-                        android:id="@+id/checkBox4"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_toEndOf="@id/checkBox3"
-                        android:text="CheckBox" />
-
-                    <CheckBox
-                        android:id="@+id/checkBox5"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_toEndOf="@id/checkBox4"
-                        android:text="CheckBox" />
-                </RelativeLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/relativeLayout2">
-
-                    <EditText
-                        android:id="@+id/etNotes3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        android:ems="10"
-                        android:gravity="start|top"
-                        android:inputType="textMultiLine" />
-
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/fragmentBtn4"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
-                app:layout_constraintTop_toBottomOf="@id/fragmentBtn3"
-                android:foreground="@drawable/rippleeffect">
-
-                <EditText
-                    android:id="@+id/etWorkout4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:hint="Enter Exercise"
-                    android:textColor="@color/white"
-                    android:textSize="26sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <RelativeLayout
-                    android:id="@id/relativeLayout2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etWorkout4">
-
-                    <CheckBox
-                        android:id="@+id/checkBox"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_alignParentLeft="true"
-                        android:text="CheckBox" />
-
-                    <CheckBox
-                        android:id="@+id/checkBox2"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_toEndOf="@id/checkBox"
-                        android:text="CheckBox" />
-
-                    <CheckBox
-                        android:id="@+id/checkBox3"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_toEndOf="@id/checkBox2"
-                        android:text="CheckBox" />
-
-                    <CheckBox
-                        android:id="@+id/checkBox4"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_toEndOf="@id/checkBox3"
-                        android:text="CheckBox" />
-
-                    <CheckBox
-                        android:id="@+id/checkBox5"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_toEndOf="@id/checkBox4"
-                        android:text="CheckBox" />
-                </RelativeLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/relativeLayout2">
-
-                    <EditText
-                        android:id="@+id/etNotes4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        android:ems="10"
-                        android:gravity="start|top"
-                        android:inputType="textMultiLine" />
-
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/fragmentBtn5"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                app:layout_constraintTop_toBottomOf="@id/fragmentBtn4"
-                android:focusable="true"
-                android:foreground="@drawable/rippleeffect">
-
-                <EditText
-                    android:id="@+id/etWorkout5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:hint="Enter Exercise"
-                    android:textColor="@color/white"
-                    android:textSize="26sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <RelativeLayout
-                    android:id="@id/relativeLayout2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etWorkout5">
-
-                    <CheckBox
-                        android:id="@+id/checkBox"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_alignParentLeft="true"
-                        android:text="CheckBox" />
-
-                    <CheckBox
-                        android:id="@+id/checkBox2"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_toEndOf="@id/checkBox"
-                        android:text="CheckBox" />
-
-                    <CheckBox
-                        android:id="@+id/checkBox3"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_toEndOf="@id/checkBox2"
-                        android:text="CheckBox" />
-
-                    <CheckBox
-                        android:id="@+id/checkBox4"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_toEndOf="@id/checkBox3"
-                        android:text="CheckBox" />
-
-                    <CheckBox
-                        android:id="@+id/checkBox5"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_toEndOf="@id/checkBox4"
-                        android:text="CheckBox" />
-                </RelativeLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/relativeLayout2">
-
-                    <EditText
-                        android:id="@+id/etNotes5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        android:ems="10"
-                        android:gravity="start|top"
-                        android:inputType="textMultiLine" />
-
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
-
-<!--    <FrameLayout-->
-<!--        android:id="@+id/frameLayout1"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="400dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent">-->
-
-<!--    </FrameLayout>-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scroll_list">
-        <!--        android:background="@drawable/fragment_border"-->
-
-
-        <!--        <ImageView-->
-        <!--            android:id="@+id/startTimer"-->
-        <!--            android:layout_width="36dp"-->
-        <!--            android:layout_height="36dp"-->
-        <!--            android:clickable="true"-->
-        <!--            android:focusable="true"-->
-        <!--            android:text="Start"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:srcCompat="@drawable/playmdpi" />-->
-
-        <!--        <TextView-->
-        <!--            android:id="@+id/countdownTimer"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_margin="8dp"-->
-        <!--            android:text="3:00"-->
-        <!--            android:textColor="@color/white"-->
-        <!--            android:textSize="30sp"-->
-        <!--            app:layout_constraintBottom_toTopOf="@+id/startTimer"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toTopOf="parent" />-->
+        tools:layout_editor_absoluteX="16dp">
 
         <TextView
             android:id="@+id/text_view_countdown"
@@ -689,13 +280,11 @@
                 android:id="@+id/button_reset"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="invisible"
+                android:visibility="visible"
                 app:srcCompat="@drawable/resetmdpi"
                 tools:visibility="visible" />
         </RelativeLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
