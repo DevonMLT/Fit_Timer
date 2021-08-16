@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clExerciseBlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="@drawable/rippleeffect"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/remove_exercise_button1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/minusmdpi"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/rippleeffect"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etExerciseTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@null"
+            android:hint="Exercise"
+            android:textColor="@color/white"
+            android:textColorHint="@color/transparent_white"
+            android:textSize="26sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clSetBlock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/etExerciseTitle"
+            tools:layout_editor_absoluteX="0dp">
+
+            <CheckBox
+                android:id="@+id/cB1E1"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                app:layout_constraintBottom_toBottomOf="@+id/editText"
+                app:layout_constraintEnd_toStartOf="@+id/editText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:hint="Set"
+                android:inputType="textMultiLine"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/transparent_white"
+                android:textSize="26sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/cB2E1"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                app:layout_constraintBottom_toBottomOf="@+id/editText3"
+                app:layout_constraintEnd_toStartOf="@+id/editText3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText3" />
+
+            <EditText
+                android:id="@+id/editText3"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:hint="Set"
+                android:inputType="textMultiLine"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/transparent_white"
+                android:textSize="26sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+            <CheckBox
+                android:id="@+id/cB3E1"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                app:layout_constraintBottom_toBottomOf="@+id/editText5"
+                app:layout_constraintEnd_toStartOf="@+id/editText5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText5" />
+
+            <EditText
+                android:id="@+id/editText4"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:hint="Set"
+                android:inputType="textMultiLine"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/transparent_white"
+                android:textSize="26sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText6" />
+
+            <CheckBox
+                android:id="@+id/cB4E1"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                app:layout_constraintBottom_toBottomOf="@+id/editText6"
+                app:layout_constraintEnd_toStartOf="@+id/editText6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText6" />
+
+            <EditText
+                android:id="@+id/editText5"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:hint="Set"
+                android:inputType="textMultiLine"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/transparent_white"
+                android:textSize="26sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText3" />
+
+            <CheckBox
+                android:id="@+id/cB5E1"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                app:layout_constraintBottom_toBottomOf="@+id/editText4"
+                app:layout_constraintEnd_toStartOf="@+id/editText4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText4" />
+
+            <EditText
+                android:id="@+id/editText6"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:hint="Set"
+                android:inputType="textMultiLine"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/transparent_white"
+                android:textSize="26sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
