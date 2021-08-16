@@ -27,16 +27,17 @@ import java.util.Locale;
 
 public class MainActivity2 extends AppCompatActivity implements View.OnClickListener {
 
-//    ConstraintLayout fragmentLayout1, fragmentLayout2, fragmentLayout3, fragmentLayout4, fragmentLayout5;
+    //    ConstraintLayout fragmentLayout1, fragmentLayout2, fragmentLayout3, fragmentLayout4, fragmentLayout5;
 //    ImageView collapse, img1, img2, img3, img4, img5;
 //    ScrollView scrollexample;
-//    long START_TIME_IN_MILLIS = 180000;
-//    TextView mTextViewCountDown;
-//    ImageView mButtonStartPause, mButtonReset;
-//    CountDownTimer mCountDownTimer;
-//    boolean mTimerRunning;
-//    long mTimeLeftInMillis = START_TIME_IN_MILLIS;
-//
+
+    long START_TIME_IN_MILLIS = 180000;
+    TextView mTextViewCountDown;
+    ImageView mButtonStartPause, mButtonReset;
+    CountDownTimer mCountDownTimer;
+    boolean mTimerRunning;
+    long mTimeLeftInMillis = START_TIME_IN_MILLIS;
+
 //    EditText editTitle,editNote1,editWorkout1,editNote2,editWorkout2,editNote3,editWorkout3,editNote4,editWorkout4,editNote5,editWorkout5;
 //    String SHARED_PREFS = "sharedprefs";
 //    String TITLE = "title";
@@ -52,45 +53,64 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
 //    String N5 = "n5";
 //    String title,etEx1,etN1,etEx2,etN2,etEx3,etN3,etEx4,etN4,etEx5,etN5;
 
-
-
-
-
     ImageView exerciseAddButton;
-    ScrollView svExercise;
-    ConstraintLayout firstWorkout;
+    LinearLayout svLinearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-//        svExercise = findViewById(R.id.svExercise);
-        firstWorkout = findViewById(R.id.first_workout);
+        svLinearLayout = findViewById(R.id.svLinearLayout);
         exerciseAddButton = findViewById(R.id.add_exercise_button);
         exerciseAddButton.setOnClickListener(this);
+
+        mTextViewCountDown = findViewById(R.id.text_view_countdown);
+        mButtonReset = findViewById(R.id.button_reset);
+        mButtonStartPause = findViewById(R.id.button_start_pause);
+        mButtonStartPause.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick (View v){
+                if (mTimerRunning) {
+                    pauseTimer();
+                } else {
+                    startTimer();
+                }
+            }
+        });
+        mButtonReset.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick (View v){
+                resetTimer();
+            }
+        });
+        updateCountDownText();
     }
+
+
     @Override
     public void onClick(View v) {
         addView();
     }
+
     private void addView() {
-        View exerciseView = getLayoutInflater().inflate(R.layout.exercise_block,null,false);
+        View exerciseView = getLayoutInflater().inflate(R.layout.exercise_block, null, false);
+        TextView textView = (TextView) exerciseView.findViewById(R.id.testView);
+        EditText etExerciseTitle = (EditText) exerciseView.findViewById(R.id.etExerciseTitle);
+        ConstraintLayout clSetBlock = (ConstraintLayout) exerciseView.findViewById(R.id.clSetBlock);
+        CheckBox cB1E1 = (CheckBox) exerciseView.findViewById(R.id.cB1E1);
+        EditText editText = (EditText) exerciseView.findViewById(R.id.editText);
+        CheckBox cB2E1 = (CheckBox) exerciseView.findViewById(R.id.cB2E1);
+        EditText editText3 = (EditText) exerciseView.findViewById(R.id.editText3);
+        CheckBox cB3E1 = (CheckBox) exerciseView.findViewById(R.id.cB3E1);
+        EditText editText4 = (EditText) exerciseView.findViewById(R.id.editText4);
+        CheckBox cB4E1 = (CheckBox) exerciseView.findViewById(R.id.cB4E1);
+        EditText editText5 = (EditText) exerciseView.findViewById(R.id.editText5);
+        CheckBox cB5E1 = (CheckBox) exerciseView.findViewById(R.id.cB5E1);
+        EditText editText6 = (EditText) exerciseView.findViewById(R.id.editText6);
 
-        TextView textView = (TextView)exerciseView.findViewById(R.id.testView);
-        EditText etExerciseTitle = (EditText)exerciseView.findViewById(R.id.etExerciseTitle);
-        ConstraintLayout clSetBlock = (ConstraintLayout)exerciseView.findViewById(R.id.clSetBlock);
-        CheckBox cB1E1 = (CheckBox)exerciseView.findViewById(R.id.cB1E1);
-        EditText editText = (EditText)exerciseView.findViewById(R.id.editText);
-        CheckBox cB2E1 = (CheckBox)exerciseView.findViewById(R.id.cB2E1);
-        EditText editText3 = (EditText)exerciseView.findViewById(R.id.editText3);
-        CheckBox cB3E1 = (CheckBox)exerciseView.findViewById(R.id.cB3E1);
-        EditText editText4 = (EditText)exerciseView.findViewById(R.id.editText4);
-        CheckBox cB4E1 = (CheckBox)exerciseView.findViewById(R.id.cB4E1);
-        EditText editText5 = (EditText)exerciseView.findViewById(R.id.editText5);
-        CheckBox cB5E1 = (CheckBox)exerciseView.findViewById(R.id.cB5E1);
-        EditText editText6 = (EditText)exerciseView.findViewById(R.id.editText6);
-
-        ImageView imageClose = (ImageView)exerciseView.findViewById(R.id.remove_exercise_button1);
+        ImageView imageClose = (ImageView) exerciseView.findViewById(R.id.remove_exercise_button1);
         imageClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,18 +118,14 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
             }
         });
 
-        firstWorkout.addView(exerciseView);
+        svLinearLayout.addView(exerciseView);
 
     }
+
     private void removeView(View view) {
-        firstWorkout.removeView(view);
+        svLinearLayout.removeView(view);
 
     }
-}
-
-
-
-
 
 
 //        SL_exercise = findViewById(R.id.SL_exercise);
@@ -133,37 +149,11 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
 //        exerciseRemoveButton = findViewById(R.id.remove_exercise_button);
 
 
-
-
-
-
-
-
-
 //        scrollexample = findViewById(R.id.scrolltest);
 //
 //
-//        mTextViewCountDown = findViewById(R.id.text_view_countdown);
-//        mButtonReset = findViewById(R.id.button_reset);
-//        mButtonStartPause = findViewById(R.id.button_start_pause);
-//        mButtonStartPause.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if(mTimerRunning) {
-//                    pauseTimer();
-//                }
-//                else {
-//                    startTimer();
-//                }
-//            }
-//        });
-//        mButtonReset.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                resetTimer();
-//            }
-//        });
-//        updateCountDownText();
+
+
 
         //Fragment inflater onclick event handler. When the layout is pressed the fragment will expand into the framelayout.
 //        fragmentLayout1 = findViewById(R.id.fragmentBtn1);
@@ -361,44 +351,44 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
 
 
     //_______________________________TIMER COUNTDOWN CODE____________________________
-//    public void startTimer() {
-//        mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
-//            @Override
-//            public void onTick(long millisUntilFinished) {
-//                mTimeLeftInMillis = millisUntilFinished;
-//                updateCountDownText();
-//            }
-//            @Override
-//            public void onFinish() {
-//                mTimerRunning = false;
-//                mButtonStartPause.setImageResource(R.drawable.playmdpi);
-//                mButtonStartPause.setVisibility(View.INVISIBLE);
-//                mButtonReset.setVisibility(View.VISIBLE);
-//            }
-//        }
-//        .start();
-//        mTimerRunning = true;
-//        mButtonStartPause.setImageResource(R.drawable.pausemdpi);
-//        mButtonReset.setVisibility(View.INVISIBLE);
-//    }
-//    public void pauseTimer() {
-//        mCountDownTimer.cancel();
-//        mTimerRunning = false;
-//        mButtonStartPause.setImageResource(R.drawable.playmdpi);
-//        mButtonReset.setVisibility(View.VISIBLE);
-//    }
-//    public void resetTimer() {
-//        mTimeLeftInMillis = START_TIME_IN_MILLIS;
-//        updateCountDownText();
-//        mButtonReset.setVisibility(View.INVISIBLE);
-//        mButtonStartPause.setVisibility(View.VISIBLE);
-//    }
-//    public void updateCountDownText() {
-//        int minutes = (int) mTimeLeftInMillis / 1000 / 60;
-//        int seconds = (int) mTimeLeftInMillis / 1000 % 60;
-//        String timeLeft = String.format(Locale.getDefault(),"%2d:%02d", minutes, seconds);
-//        mTextViewCountDown.setText(timeLeft);
-//    }
+    public void startTimer() {
+        mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                mTimeLeftInMillis = millisUntilFinished;
+                updateCountDownText();
+            }
+            @Override
+            public void onFinish() {
+                mTimerRunning = false;
+                mButtonStartPause.setImageResource(R.drawable.playmdpi);
+                mButtonStartPause.setVisibility(View.INVISIBLE);
+                mButtonReset.setVisibility(View.VISIBLE);
+            }
+        }
+        .start();
+        mTimerRunning = true;
+        mButtonStartPause.setImageResource(R.drawable.pausemdpi);
+        mButtonReset.setVisibility(View.INVISIBLE);
+    }
+    public void pauseTimer() {
+        mCountDownTimer.cancel();
+        mTimerRunning = false;
+        mButtonStartPause.setImageResource(R.drawable.playmdpi);
+        mButtonReset.setVisibility(View.VISIBLE);
+    }
+    public void resetTimer() {
+        mTimeLeftInMillis = START_TIME_IN_MILLIS;
+        updateCountDownText();
+        mButtonReset.setVisibility(View.INVISIBLE);
+        mButtonStartPause.setVisibility(View.VISIBLE);
+    }
+    public void updateCountDownText() {
+        int minutes = (int) mTimeLeftInMillis / 1000 / 60;
+        int seconds = (int) mTimeLeftInMillis / 1000 % 60;
+        String timeLeft = String.format(Locale.getDefault(),"%2d:%02d", minutes, seconds);
+        mTextViewCountDown.setText(timeLeft);
+    }
     //_______________________________TIMER COUNTDOWN CODE____________________________
 
 
@@ -413,4 +403,4 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
 //        fragmentTransaction.commit();
 //    }
 
-//}
+}
