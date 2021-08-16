@@ -12,22 +12,24 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.util.Locale;
 
-public class MainActivity2 extends AppCompatActivity{
+public class MainActivity2 extends AppCompatActivity implements View.OnClickListener {
 
-    ConstraintLayout fragmentLayout1,fragmentLayout2,fragmentLayout3,fragmentLayout4,fragmentLayout5;
-    ImageView collapse, img1, img2, img3, img4, img5;
-
-    ScrollView scrollexample;
-
+//    ConstraintLayout fragmentLayout1, fragmentLayout2, fragmentLayout3, fragmentLayout4, fragmentLayout5;
+//    ImageView collapse, img1, img2, img3, img4, img5;
+//    ScrollView scrollexample;
 //    long START_TIME_IN_MILLIS = 180000;
 //    TextView mTextViewCountDown;
 //    ImageView mButtonStartPause, mButtonReset;
@@ -50,11 +52,93 @@ public class MainActivity2 extends AppCompatActivity{
 //    String N5 = "n5";
 //    String title,etEx1,etN1,etEx2,etN2,etEx3,etN3,etEx4,etN4,etEx5,etN5;
 
+
+
+
+
+    ImageView exerciseAddButton;
+    ScrollView svExercise;
+    ConstraintLayout firstWorkout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+//        svExercise = findViewById(R.id.svExercise);
+        firstWorkout = findViewById(R.id.first_workout);
+        exerciseAddButton = findViewById(R.id.add_exercise_button);
+        exerciseAddButton.setOnClickListener(this);
     }
+    @Override
+    public void onClick(View v) {
+        addView();
+    }
+    private void addView() {
+        View exerciseView = getLayoutInflater().inflate(R.layout.exercise_block,null,false);
+
+        TextView textView = (TextView)exerciseView.findViewById(R.id.testView);
+        EditText etExerciseTitle = (EditText)exerciseView.findViewById(R.id.etExerciseTitle);
+        ConstraintLayout clSetBlock = (ConstraintLayout)exerciseView.findViewById(R.id.clSetBlock);
+        CheckBox cB1E1 = (CheckBox)exerciseView.findViewById(R.id.cB1E1);
+        EditText editText = (EditText)exerciseView.findViewById(R.id.editText);
+        CheckBox cB2E1 = (CheckBox)exerciseView.findViewById(R.id.cB2E1);
+        EditText editText3 = (EditText)exerciseView.findViewById(R.id.editText3);
+        CheckBox cB3E1 = (CheckBox)exerciseView.findViewById(R.id.cB3E1);
+        EditText editText4 = (EditText)exerciseView.findViewById(R.id.editText4);
+        CheckBox cB4E1 = (CheckBox)exerciseView.findViewById(R.id.cB4E1);
+        EditText editText5 = (EditText)exerciseView.findViewById(R.id.editText5);
+        CheckBox cB5E1 = (CheckBox)exerciseView.findViewById(R.id.cB5E1);
+        EditText editText6 = (EditText)exerciseView.findViewById(R.id.editText6);
+
+        ImageView imageClose = (ImageView)exerciseView.findViewById(R.id.remove_exercise_button1);
+        imageClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                removeView(exerciseView);
+            }
+        });
+
+        firstWorkout.addView(exerciseView);
+
+    }
+    private void removeView(View view) {
+        firstWorkout.removeView(view);
+
+    }
+}
+
+
+
+
+
+
+//        SL_exercise = findViewById(R.id.SL_exercise);
+
+//        ConstraintLayout clExerciseBlock = (ConstraintLayout)exerciseView.findViewById(R.id.clExerciseBlock1);
+//        ConstraintLayout clExerciseBlock = (ConstraintLayout)exerciseView.findViewById(R.id.clExerciseBlock);
+//        ImageView remove_exercise_button = (ImageView)exerciseView.findViewById(R.id.remove_exercise_button);
+//        EditText etExerciseTitle = (EditText)exerciseView.findViewById(R.id.etExerciseTitle);
+//        ConstraintLayout clSetBlock = (ConstraintLayout)exerciseView.findViewById(R.id.clSetBlock);
+//        CheckBox cB1E1 = (CheckBox)exerciseView.findViewById(R.id.cB1E1);
+//        EditText editText = (EditText)exerciseView.findViewById(R.id.editText);
+//        CheckBox cB2E1 = (CheckBox)exerciseView.findViewById(R.id.cB2E1);
+//        EditText editText3 = (EditText)exerciseView.findViewById(R.id.editText3);
+//        CheckBox cB3E1 = (CheckBox)exerciseView.findViewById(R.id.cB3E1);
+//        EditText editText4 = (EditText)exerciseView.findViewById(R.id.editText4);
+//        CheckBox cB4E1 = (CheckBox)exerciseView.findViewById(R.id.cB4E1);
+//        EditText editText5 = (EditText)exerciseView.findViewById(R.id.editText5);
+//        CheckBox cB5E1 = (CheckBox)exerciseView.findViewById(R.id.cB5E1);
+//        EditText editText6 = (EditText)exerciseView.findViewById(R.id.editText6);
+
+//        exerciseRemoveButton = findViewById(R.id.remove_exercise_button);
+
+
+
+
+
+
+
+
 
 //        scrollexample = findViewById(R.id.scrolltest);
 //
@@ -329,4 +413,4 @@ public class MainActivity2 extends AppCompatActivity{
 //        fragmentTransaction.commit();
 //    }
 
-}
+//}
