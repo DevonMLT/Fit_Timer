@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -27,7 +28,8 @@ import java.util.Locale;
 
 public class MainActivity2 extends AppCompatActivity implements View.OnClickListener {
 
-    //    ConstraintLayout fragmentLayout1, fragmentLayout2, fragmentLayout3, fragmentLayout4, fragmentLayout5;
+    LinearLayout timerFragBtn;
+    //ConstraintLayout fragmentLayout1, fragmentLayout2, fragmentLayout3, fragmentLayout4, fragmentLayout5;
 //    ImageView collapse, img1, img2, img3, img4, img5;
 //    ScrollView scrollexample;
 
@@ -86,6 +88,8 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
             }
         });
         updateCountDownText();
+
+
     }
 
 
@@ -120,7 +124,8 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
 
         svLinearLayout.addView(exerciseView);
 
-    }
+
+        }
 
     private void removeView(View view) {
         svLinearLayout.removeView(view);
@@ -155,7 +160,8 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
 
 
 
-        //Fragment inflater onclick event handler. When the layout is pressed the fragment will expand into the framelayout.
+    //Fragment inflater onclick event handler. When the layout is pressed the fragment
+    // will expand into the framelayout.
 //        fragmentLayout1 = findViewById(R.id.fragmentBtn1);
 //        fragmentLayout2 = findViewById(R.id.fragmentBtn2);
 //        fragmentLayout3 = findViewById(R.id.fragmentBtn3);
@@ -171,8 +177,8 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
 //            }
 //        });
 
-
-//        //set fragmentLayout to invisible when the collapse "-" button is pressed. "-" changes to "+" when pressed
+//        set fragmentLayout to invisible when the collapse "-" button is pressed.
+//        "-" changes to "+" when pressed
 //        img1 = findViewById(R.id.collapseButton1);
 //        collapse = findViewById(R.id.collapseButton1);
 //        collapse.setOnClickListener(new View.OnClickListener() {
@@ -186,6 +192,10 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
 //                    img1.setImageResource(R.drawable.minusmdpi); }
 //            }
 //        });
+
+
+
+
 //        img2 = findViewById(R.id.collapseButton2);
 //        collapse = findViewById(R.id.collapseButton2);
 //        collapse.setOnClickListener(new View.OnClickListener() {
@@ -280,7 +290,10 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
 //        updateView();
 //    }
 
-    //code for saving user input into the edittext then saving data when the view is not visibl with onStop then loading and updating the text with updateView.
+
+
+    //------------code for saving user input into the edittext then saving data when the view is
+    // ------------ot visible with onStop then loading and updating the text with updateView.
 //    public void onStop() {
 //        super.onStop();
 //        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
@@ -346,10 +359,6 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
 
 
 
-
-
-
-
     //_______________________________TIMER COUNTDOWN CODE____________________________
     public void startTimer() {
         mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
@@ -394,13 +403,14 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
 
 
 
-    //Need to figure out how to give each framelayout/fragmentBtn it's own fragment and how to switch between them within one method. Perhaps make a separate replaceFragment class?
-//    private void replaceFragment(Fragment fragment) {
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//        fragmentTransaction.add(R.id.frameLayout1, fragment);
-//        fragmentTransaction.addToBackStack(null);
-//        fragmentTransaction.commit();
-//    }
+    //Need to figure out how to give each framelayout/fragmentBtn it's own fragment and
+    // how to switch between them within one method. Perhaps make a separate replaceFragment class?
+    private void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.frameLayout1, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
 
 }

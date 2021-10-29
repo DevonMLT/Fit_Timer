@@ -5,16 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
 
     private LinearLayout buttonToActivity2;
+    EditText tText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         buttonToActivity2 = findViewById(R.id.llStart);
         buttonToActivity2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -23,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    tText = findViewById(R.id.testText);
+
+
+
 
 //        editText = findViewById(R.id.edittext);
 //        loadData();
