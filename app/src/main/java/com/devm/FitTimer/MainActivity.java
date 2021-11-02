@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//        tText = findViewById(R.id.testText);
+
         buttonToActivity2 = findViewById(R.id.llStart);
         buttonToActivity2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    tText = findViewById(R.id.testText);
+
 
 
 
