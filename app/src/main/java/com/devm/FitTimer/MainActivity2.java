@@ -66,28 +66,28 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
         exerciseAddButton = findViewById(R.id.add_exercise_button);
         exerciseAddButton.setOnClickListener(this);
 
-        mTextViewCountDown = findViewById(R.id.text_view_countdown);
-        mButtonReset = findViewById(R.id.button_reset);
-        mButtonStartPause = findViewById(R.id.button_start_pause);
-        mButtonStartPause.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick (View v){
-                if (mTimerRunning) {
-                    pauseTimer();
-                } else {
-                    startTimer();
-                }
-            }
-        });
-        mButtonReset.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick (View v){
-                resetTimer();
-            }
-        });
-        updateCountDownText();
+//        mTextViewCountDown = findViewById(R.id.text_view_countdown);
+//        mButtonReset = findViewById(R.id.button_reset);
+//        mButtonStartPause = findViewById(R.id.button_start_pause);
+//        mButtonStartPause.setOnClickListener(new View.OnClickListener()
+//        {
+//            @Override
+//            public void onClick (View v){
+//                if (mTimerRunning) {
+//                    pauseTimer();
+//                } else {
+//                    startTimer();
+//                }
+//            }
+//        });
+//        mButtonReset.setOnClickListener(new View.OnClickListener()
+//        {
+//            @Override
+//            public void onClick (View v){
+//                resetTimer();
+//            }
+//        });
+//        updateCountDownText();
 
 
     }
@@ -100,7 +100,7 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
 
     private void addView() {
         View exerciseView = getLayoutInflater().inflate(R.layout.exercise_block, null, false);
-        TextView textView = (TextView) exerciseView.findViewById(R.id.testView);
+//        TextView textView = (TextView) exerciseView.findViewById(R.id.testView);
         EditText etExerciseTitle = (EditText) exerciseView.findViewById(R.id.etExerciseTitle);
         ConstraintLayout clSetBlock = (ConstraintLayout) exerciseView.findViewById(R.id.clSetBlock);
         CheckBox cB1E1 = (CheckBox) exerciseView.findViewById(R.id.cB1E1);
@@ -360,44 +360,44 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
 
 
     //_______________________________TIMER COUNTDOWN CODE____________________________
-    public void startTimer() {
-        mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                mTimeLeftInMillis = millisUntilFinished;
-                updateCountDownText();
-            }
-            @Override
-            public void onFinish() {
-                mTimerRunning = false;
-                mButtonStartPause.setImageResource(R.drawable.playmdpi);
-                mButtonStartPause.setVisibility(View.INVISIBLE);
-                mButtonReset.setVisibility(View.VISIBLE);
-            }
-        }
-        .start();
-        mTimerRunning = true;
-        mButtonStartPause.setImageResource(R.drawable.pausemdpi);
-        mButtonReset.setVisibility(View.INVISIBLE);
-    }
-    public void pauseTimer() {
-        mCountDownTimer.cancel();
-        mTimerRunning = false;
-        mButtonStartPause.setImageResource(R.drawable.playmdpi);
-        mButtonReset.setVisibility(View.VISIBLE);
-    }
-    public void resetTimer() {
-        mTimeLeftInMillis = START_TIME_IN_MILLIS;
-        updateCountDownText();
-        mButtonReset.setVisibility(View.INVISIBLE);
-        mButtonStartPause.setVisibility(View.VISIBLE);
-    }
-    public void updateCountDownText() {
-        int minutes = (int) mTimeLeftInMillis / 1000 / 60;
-        int seconds = (int) mTimeLeftInMillis / 1000 % 60;
-        String timeLeft = String.format(Locale.getDefault(),"%2d:%02d", minutes, seconds);
-        mTextViewCountDown.setText(timeLeft);
-    }
+//    public void startTimer() {
+//        mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
+//            @Override
+//            public void onTick(long millisUntilFinished) {
+//                mTimeLeftInMillis = millisUntilFinished;
+//                updateCountDownText();
+//            }
+//            @Override
+//            public void onFinish() {
+//                mTimerRunning = false;
+//                mButtonStartPause.setImageResource(R.drawable.playmdpi);
+//                mButtonStartPause.setVisibility(View.INVISIBLE);
+//                mButtonReset.setVisibility(View.VISIBLE);
+//            }
+//        }
+//        .start();
+//        mTimerRunning = true;
+//        mButtonStartPause.setImageResource(R.drawable.pausemdpi);
+//        mButtonReset.setVisibility(View.INVISIBLE);
+//    }
+//    public void pauseTimer() {
+//        mCountDownTimer.cancel();
+//        mTimerRunning = false;
+//        mButtonStartPause.setImageResource(R.drawable.playmdpi);
+//        mButtonReset.setVisibility(View.VISIBLE);
+//    }
+//    public void resetTimer() {
+//        mTimeLeftInMillis = START_TIME_IN_MILLIS;
+//        updateCountDownText();
+//        mButtonReset.setVisibility(View.INVISIBLE);
+//        mButtonStartPause.setVisibility(View.VISIBLE);
+//    }
+//    public void updateCountDownText() {
+//        int minutes = (int) mTimeLeftInMillis / 1000 / 60;
+//        int seconds = (int) mTimeLeftInMillis / 1000 % 60;
+//        String timeLeft = String.format(Locale.getDefault(),"%2d:%02d", minutes, seconds);
+//        mTextViewCountDown.setText(timeLeft);
+//    }
     //_______________________________TIMER COUNTDOWN CODE____________________________
 
 
